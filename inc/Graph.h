@@ -53,6 +53,12 @@ struct Waypoint {
     int weight;
     int totalCost;
 
+    ~Waypoint() {
+        for (int i = 0; i < children.size(); i++) {
+            delete children[i];
+        }
+    }
+
     Waypoint(Vertex *v) {
         parent = nullptr;
         vertex = v;
@@ -86,6 +92,12 @@ inline std::ostream &operator<<(std::ostream &os, Waypoint *wp) {
 
 struct Graph {
     ArrayList<Vertex *> vertices;
+    
+    ~Graph() {
+        for (int i = 0; i < vertices.size(); i++) {
+            delete vertices[i];
+        }
+    }
 
     void addVertex(Vertex *v) { vertices.append(v); }
 
