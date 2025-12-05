@@ -126,6 +126,9 @@ struct Graph {
             result = frontier.dequeue();
 
             if (result->vertex == destination) {
+                while (!frontier.isEmpty()) {
+                    delete frontier.dequeue();
+                }
                 return result;
             }
 
@@ -166,6 +169,7 @@ struct Graph {
             }
             std::cout << std::endl;
         }
+        delete first;
 
         return nullptr;
     }
@@ -242,6 +246,9 @@ struct Graph {
             result = frontier.removeLast();
 
             if (result->vertex == destination) {
+                for (int i = 0; i < frontier.size(); i++) {
+                    delete frontier[i];
+                }
                 return result;
             }
 
@@ -346,6 +353,7 @@ struct Graph {
             }
             std::cout << std::endl;
         }
+        delete first;
 
         return nullptr;
     }
@@ -369,6 +377,9 @@ struct Graph {
             result = frontier.removeLast();
 
             if (result->vertex == destination) {
+                for (int i = 0; frontier.size(); i++) {
+                    delete frontier[i];
+                }
                 return result;
             }
 
@@ -473,6 +484,7 @@ struct Graph {
             }
             std::cout << std::endl;
         }
+        delete first;
 
         return nullptr;
     }
