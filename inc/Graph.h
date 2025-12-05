@@ -377,7 +377,7 @@ struct Graph {
             result = frontier.removeLast();
 
             if (result->vertex == destination) {
-                for (int i = 0; frontier.size(); i++) {
+                for (int i = 0; i < frontier.size(); i++) {
                     delete frontier[i];
                 }
                 return result;
