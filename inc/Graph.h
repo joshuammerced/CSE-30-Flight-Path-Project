@@ -17,6 +17,8 @@ struct Vertex {
     ArrayList<Edge *> edgeList;
 
     Vertex(std::string data) { this->data = data; }
+
+    ~Vertex();
 };
 
 inline std::ostream &operator<<(std::ostream &os, Vertex *v) {
@@ -38,6 +40,12 @@ struct Edge {
         this->cost = cost;
     }
 };
+
+inline Vertex::~Vertex() {
+    for (int i = 0; i < edgeList.size(); i++) {
+        delete edgeList[i];
+    }
+}
 
 inline std::ostream &operator<<(std::ostream &os, Edge *e) {
     os << "(" << e->from << ", " << e->to << ") - " << e->weight;
