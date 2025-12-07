@@ -159,6 +159,9 @@ struct Graph {
                     frontier.enqueue(result->children[i]);
                     seen.insert(result->children[i]->vertex->data);
                 }
+                else {
+                    delete result->children[i];
+                }
             }
 
             std::cout << std::endl << "Frontier" << std::endl;
@@ -345,6 +348,9 @@ struct Graph {
                             }
                         }
                     }
+                    else {
+                        delete result->children[i];
+                    }
                 }
             }
 
@@ -475,6 +481,9 @@ struct Graph {
                                 b--;
                             }
                         }
+                    }
+                    else {
+                        delete result->children[i];
                     }
                 }
             }
