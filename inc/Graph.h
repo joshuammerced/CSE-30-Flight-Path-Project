@@ -186,59 +186,6 @@ struct Graph {
     }
 
 
-    // Waypoint *dfs(Vertex *start, Vertex *destination) {
-    //     std::cout << "Running Depth-First Search" << std::endl;
-
-    //     Stack<Waypoint *> frontier;
-    //     HashTable<std::string> seen;
-
-    //     Waypoint *first = new Waypoint(start);
-
-    //     frontier.push(first);
-    //     seen.insert(first->vertex->data);
-
-    //     Waypoint *result = nullptr;
-
-    //     while (!frontier.isEmpty()) {
-    //         result = frontier.pop();
-
-    //         if (result->vertex == destination) {
-    //             return result;
-    //         }
-
-    //         result->expand();
-
-    //         std::cout << std::endl
-    //                   << "Expanding " << result->vertex->data << std::endl;
-
-    //         for (int i = 0; i < result->children.size(); i++) {
-    //             if (!seen.search(result->children[i]->vertex->data)) {
-    //                 std::cout << "Adding " << result->children[i]->vertex->data
-    //                           << std::endl;
-    //                 frontier.push(result->children[i]);
-    //                 seen.insert(result->children[i]->vertex->data);
-    //             }
-    //         }
-
-    //         std::cout << std::endl << "Frontier" << std::endl;
-
-    //         Link<Waypoint *> *temp = frontier.front;
-    //         while (temp != nullptr) {
-    //             std::cout << "(" << temp->data->vertex->data << ","
-    //                       << temp->data->partialCost << ")";
-    //             temp = temp->next;
-
-    //             if (temp != nullptr) {
-    //                 std::cout << ", ";
-    //             } else {
-    //                 std::cout << std::endl;
-    //             }
-    //         }
-    //         std::cout << std::endl;
-    //     }
-
-    //     return nullptr;
-    // }
     Waypoint *ccs(Vertex *start, Vertex *destination) {
         std::cout << "Running Cheap Cost Search" << std::endl;
 
