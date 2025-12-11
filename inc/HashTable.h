@@ -93,7 +93,7 @@ class HashTable {
     static_assert(std::is_same<T, int>::value ||
                       std::is_same<T, float>::value ||
                       std::is_same<T, std::string>::value,
-                  "Template arugments should only be int, float, or string");
+                  "Template arguments should only be int, float, or string");
 
 public:
     HashTable(int k = 10) {

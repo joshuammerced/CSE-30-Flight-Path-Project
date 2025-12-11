@@ -14,12 +14,9 @@ using namespace bobcat;
 using namespace std;
 
 Application::Application() {
-    // App's constructor
     initData();
     initInterface();
 }
-
-
 
 void Application::handleClick(bobcat::Widget *sender) {
 
@@ -49,7 +46,6 @@ void Application::handleClick(bobcat::Widget *sender) {
     }
     system("clear");
     if (path) {
-        // cout << "We found a path" << endl;
         ArrayList<Waypoint *> pathList;
         Waypoint *temp = path;
         while (temp != nullptr) {
@@ -65,15 +61,15 @@ void Application::handleClick(bobcat::Widget *sender) {
                 Waypoint *next= pathList[i-1];
                 string info;
                 if(prefPath == 1){
-                    info = "Flight Time: " +to_string(next->weight) + " hours";
+                    info = "Flight Time: " + to_string(next->weight) + " hours";
                 }
                 else if(prefPath == 0){
                     int flightCost = next->totalCost - point->totalCost;
-                    info = "Cost: $" +to_string(flightCost);
+                    info = "Cost: $" + to_string(flightCost);
                 }
                 else{
                     j++;
-                    info ="Stops :"+to_string(j);
+                    info ="Stops: "+to_string(j);
                 }
                 y += 20;
                 results->add(new TextBox(40,y,300,25, info));
